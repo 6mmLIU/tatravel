@@ -6,6 +6,7 @@ import cn.wolfcode.wolf2w.business.service.IRegionService;
 import cn.wolfcode.wolf2w.common.core.domain.R;
 import cn.wolfcode.wolf2w.common.security.annotation.InnerAuth;
 import cn.wolfcode.wolf2w.business.api.domain.Destination;
+import cn.wolfcode.wolf2w.business.api.domain.DTO.DestinationDTO;
 import cn.wolfcode.wolf2w.business.query.DestinationQuery;
 import cn.wolfcode.wolf2w.business.service.IDestinationService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 目的地 Controller
@@ -82,8 +84,22 @@ public class DestinationController {
      * Feign 接口
      */
     @GetMapping("/feign/list")
-    public R<List<Destination>> feignList() {
-        return R.ok(destinationService.list());
+    public R<List<DestinationDTO>> feignList() {
+        List<Destination> list = destinationService.list();
+        List<DestinationDTO> dtoList = list.stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
+        return R.ok(dtoList);
+    }
+
+    private DestinationDTO toDto(Destination dest) {
+        DestinationDTO dto = new DestinationDTO();
+        dto.setId(dest.getId());
+        dto.setName(dest.getName());
+        if (dest.getChildren() != null) {
+            dest.getChildren().forEach(child -> dto.getChildren().add(toDto(child)));
+        }
+        return dto;
     }
 
     @InnerAuth
