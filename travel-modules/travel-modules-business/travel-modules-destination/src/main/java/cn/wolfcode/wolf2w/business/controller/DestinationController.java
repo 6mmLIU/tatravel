@@ -6,14 +6,17 @@ import cn.wolfcode.wolf2w.business.service.IRegionService;
 import cn.wolfcode.wolf2w.common.core.domain.R;
 import cn.wolfcode.wolf2w.common.security.annotation.InnerAuth;
 import cn.wolfcode.wolf2w.business.api.domain.Destination;
+import cn.wolfcode.wolf2w.business.api.domain.DTO.DestinationDTO;
 import cn.wolfcode.wolf2w.business.query.DestinationQuery;
 import cn.wolfcode.wolf2w.business.service.IDestinationService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 目的地 Controller
@@ -82,8 +85,34 @@ public class DestinationController {
      * Feign 接口
      */
     @GetMapping("/feign/list")
-    public R<List<Destination>> feignList() {
-        return R.ok(destinationService.list());
+    public R<List<DestinationDTO>> feignList(@RequestParam(value = "type", required = false) Integer type,
+                                            @RequestParam(value = "name", required = false) String name) {
+        List<Destination> all = destinationService.list();
+        Map<Long, DestinationDTO> dtoMap = new HashMap<>(all.size());
+        for (Destination dest : all) {
+            DestinationDTO dto = new DestinationDTO();
+            dto.setId(dest.getId());
+            dto.setName(dest.getName());
+            dtoMap.put(dest.getId(), dto);
+        }
+
+        List<DestinationDTO> roots = new ArrayList<>();
+        for (Destination dest : all) {
+            DestinationDTO dto = dtoMap.get(dest.getId());
+            Long parentId = dest.getParentId();
+            if (parentId == null) {
+                roots.add(dto);
+            } else {
+                DestinationDTO parent = dtoMap.get(parentId);
+                if (parent != null) {
+                    parent.getChildren().add(dto);
+                } else {
+                    roots.add(dto);
+                }
+            }
+        }
+
+        return R.ok(roots);
     }
 
     @InnerAuth
