@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -28,6 +29,6 @@ public class DestinationBffController {
                 + ", size=" + (r==null||r.getData()==null?0:r.getData().size()));
 
         // 只要下游返回了数据，统一按 200 返回，前端就会渲染
-        return R.ok(r != null && r.getData() != null ? r.getData() : List.of());
+        return R.ok(r != null && r.getData() != null ? r.getData() : Collections.emptyList());
     }
 }
