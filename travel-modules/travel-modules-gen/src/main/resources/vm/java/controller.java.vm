@@ -1,0 +1,56 @@
+package ${packageName}.${moduleName}.controller;
+
+import ${packageName}.common.core.domain.R;
+import ${packageName}.common.security.annotation.InnerAuth;
+import ${packageName}.${moduleName}.api.domain.${ClassName};
+import ${packageName}.${moduleName}.query.${ClassName}Query;
+import ${packageName}.${moduleName}.service.I${ClassName}Service;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+/**
+ * ${functionName} Controller
+ * 
+ * @author ${author}
+ * @date ${datetime}
+ */
+@RestController
+@RequestMapping("${className}s")
+public class ${ClassName}Controller {
+    @Autowired
+    private I${ClassName}Service ${className}Service;
+    /**
+     * ${functionName}详情
+     */
+    @GetMapping("/detail/{id}")
+    public R<${ClassName}> detail(@PathVariable Long id) {
+        ${ClassName} ${className} = ${className}Service.getById(id);
+        return R.ok(${className});
+    }
+    /**
+     * ${functionName} 列表
+     */
+    @GetMapping("/query")
+    public R<IPage<${ClassName}>> query(${ClassName}Query qo) {
+        IPage<${ClassName}> page = ${className}Service.queryPage(qo);
+        return R.ok(page);
+    }
+
+
+    /*****************************************对外暴露Fegin接口**********************************************/
+    /**
+     * Feign 接口
+     */
+    @GetMapping("/feign/list")
+    public R<List<${ClassName}>> feignList() {
+        return R.ok(${className}Service.list());
+    }
+    @InnerAuth
+    @GetMapping("/feign/{id}")
+    public R<${ClassName}> feignGet(@PathVariable Long id) {
+        return R.ok(${className}Service.getById(id));
+    }
+}

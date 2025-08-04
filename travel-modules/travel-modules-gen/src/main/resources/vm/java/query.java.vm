@@ -1,0 +1,14 @@
+package ${packageName}.${moduleName}.query;
+
+
+import ${packageName}.common.core.query.QueryObject;
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+* ${comment}查询参数封装对象
+*/
+@Setter
+@Getter
+public class ${ClassName}Query extends  QueryObject{
+}

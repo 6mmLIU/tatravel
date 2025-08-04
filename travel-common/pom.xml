@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>cn.wolfcode.wolf2w</groupId>
+        <artifactId>travel</artifactId>
+        <version>3.6.2</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>travel-common-log</module>
+        <module>travel-common-core</module>
+        <module>travel-common-redis</module>
+        <module>travel-common-seata</module>
+        <module>travel-common-swagger</module>
+        <module>travel-common-security</module>
+        <module>travel-common-datascope</module>
+        <module>travel-common-datasource</module>
+        <module>travel-common-mybatis-plus</module>
+    </modules>
+
+    <artifactId>travel-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        travel-common通用模块
+    </description>
+
+</project>

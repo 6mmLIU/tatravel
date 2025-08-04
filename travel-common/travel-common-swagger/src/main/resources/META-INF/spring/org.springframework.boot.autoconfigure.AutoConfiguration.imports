@@ -1,0 +1,3 @@
+# cn.wolfcode.wolf2w.common.swagger.config.SwaggerAutoConfiguration
+# cn.wolfcode.wolf2w.common.swagger.config.SwaggerWebConfiguration
+# cn.wolfcode.wolf2w.common.swagger.config.SwaggerBeanPostProcessor

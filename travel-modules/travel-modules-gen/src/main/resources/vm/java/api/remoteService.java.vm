@@ -1,0 +1,30 @@
+package ${packageName}.${moduleName}.api;
+
+import ${packageName}.common.core.constant.SecurityConstants;
+import ${packageName}.common.core.domain.R;
+import ${packageName}.${moduleName}.api.domain.${ClassName};
+import ${packageName}.${moduleName}.api.factory.Remote${ClassName}FallbackFactory;
+import ${packageName}.common.core.constant.ServiceNameConstants;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+import java.util.List;
+
+/**
+* ${functionName} 远程服务
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+@FeignClient(contextId = "Remote${ClassName}Service", name = ServiceNameConstants.${ClassName.toUpperCase()}_SERVICE, fallbackFactory = Remote${ClassName}FallbackFactory.class)
+public interface Remote${ClassName}Service {
+
+    @GetMapping("/${className}s/feign/list")
+    R<List<${ClassName}>> list(@RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
+    @GetMapping("/${className}s/feign/{id}")
+    R<${ClassName}> getOne(@PathVariable("id") Long id, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
+}

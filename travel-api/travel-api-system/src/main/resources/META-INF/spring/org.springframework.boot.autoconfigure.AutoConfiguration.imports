@@ -1,0 +1,3 @@
+cn.wolfcode.wolf2w.system.api.factory.RemoteUserFallbackFactory
+cn.wolfcode.wolf2w.system.api.factory.RemoteLogFallbackFactory
+cn.wolfcode.wolf2w.system.api.factory.RemoteFileFallbackFactory

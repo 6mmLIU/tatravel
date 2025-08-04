@@ -1,0 +1,13 @@
+server:
+  port: 8095
+spring:
+  application:
+    name: travel-message
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  redis:
+    password:
+    host: localhost
+    port: 6379

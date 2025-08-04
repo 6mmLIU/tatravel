@@ -1,0 +1,21 @@
+package ${packageName}.${moduleName}.service;
+
+import ${packageName}.${moduleName}.api.domain.${ClassName};
+import ${packageName}.${moduleName}.query.${ClassName}Query;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+ * ${functionName}Service接口
+ * 
+ * @author ${author}
+ * @date ${datetime}
+ */
+public interface I${ClassName}Service extends IService<${ClassName}>{
+    /**
+    * 分页
+    * @param qo
+    * @return
+    */
+    IPage<${ClassName}> queryPage(${ClassName}Query qo);
+}
