@@ -1,6 +1,7 @@
 package cn.wolfcode.wolf2w.business.service;
 
 import cn.wolfcode.wolf2w.business.api.domain.TaAnswer;
+import cn.wolfcode.wolf2w.business.api.domain.dto.AnswerDTO;
 import cn.wolfcode.wolf2w.business.query.TaAnswerQuery;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,4 +19,6 @@ public interface ITaAnswerService extends IService<TaAnswer>{
     * @return
     */
     IPage<TaAnswer> queryPage(TaAnswerQuery qo);
+
+    Long create(AnswerDTO dto, Long userId);
 }
