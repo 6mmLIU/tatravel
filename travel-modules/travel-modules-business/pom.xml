@@ -18,6 +18,7 @@
         <module>travel-modules-dev</module>
         <module>travel-modules-note</module>
         <module>travel-modules-answer</module>
+        <module>travel-modules-search</module>
     </modules>
 
     <properties>

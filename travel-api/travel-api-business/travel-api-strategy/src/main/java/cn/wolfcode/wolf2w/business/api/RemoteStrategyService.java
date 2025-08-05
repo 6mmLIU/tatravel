@@ -33,4 +33,9 @@ public interface RemoteStrategyService {
 
     @PostMapping("/strategies/feign/statisHashPersistence")
     R<?> statisHashPersistence(@RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
+
+    @GetMapping("/strategies/feign/list2")
+    R<List<Strategy>> list2(@RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
 }

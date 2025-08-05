@@ -40,6 +40,11 @@ public class RemoteDestinationFallbackFactory implements FallbackFactory<RemoteD
             public R<Long> isAbroad(Long destId, String source) {
                 return R.fail("查询国内国外失败:"+throwable.getMessage());
             }
+
+            @Override
+            public R<List<Destination>> list2(String source) {
+                return R.fail("查询国内国外失败:"+throwable.getMessage());
+            }
         };
     }
 }

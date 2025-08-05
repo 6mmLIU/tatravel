@@ -49,6 +49,11 @@ public class RemoteStrategyFallbackFactory implements FallbackFactory<RemoteStra
             public R<?> statisHashPersistence(String source) {
                 return R.fail("统计数据持久化失败：" + throwable.getMessage());
             }
+
+            @Override
+            public R<List<Strategy>> list2(String source) {
+                return R.fail("6666：" + throwable.getMessage());
+            }
         };
     }
 }

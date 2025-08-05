@@ -1,0 +1,15 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: travel-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
+  redis:
+    host: localhost
+    port: 6379

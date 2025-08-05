@@ -15,13 +15,11 @@ import java.io.Serializable;
 
 /**
  * 前台用户对象 ta_user_info
- * 
+ *
  * @author dafei
  * @date 2023-06-18
  */
-@Setter
-@Getter
-@Accessors(chain = true)
+
 @TableName("ta_user_info")
 public class UserInfo implements Serializable {
     private static final long serialVersionUID = 1L;

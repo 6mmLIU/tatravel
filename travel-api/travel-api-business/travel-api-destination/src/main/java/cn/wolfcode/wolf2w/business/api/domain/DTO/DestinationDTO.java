@@ -1,6 +1,7 @@
 package cn.wolfcode.wolf2w.business.api.domain.DTO;
 
 import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,5 +14,13 @@ public class DestinationDTO {
      * Initialized to an empty list to avoid null checks on the frontend.
      */
     private List<DestinationDTO> children = new ArrayList<>();
+
+    public static DestinationDTO leaf(Long id, String name) {
+        DestinationDTO d = new DestinationDTO();
+        d.setId(id);
+        d.setName(name);
+        d.setChildren(new ArrayList<>());
+        return d;
+    }
 
 }

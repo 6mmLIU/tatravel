@@ -117,6 +117,10 @@ public class StrategyController {
     public R<List<Strategy>> feignList() {
         return R.ok(strategyService.list());
     }
+    @GetMapping("/feign/list2")
+    public R<List<Strategy>> feignList2() {
+        return R.ok(strategyService.list());
+    }
 
     @InnerAuth
     @GetMapping("/feign/{id}")

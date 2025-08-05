@@ -31,4 +31,6 @@ public interface RemoteDestinationService {
 
     @GetMapping("/destinations/isAbroad/{destId}")
     R<Long> isAbroad(@PathVariable("destId") Long destId, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+    @GetMapping("/destinations/feign/list2")
+    R<List<Destination>> list2(@RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 }
