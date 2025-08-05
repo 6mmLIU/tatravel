@@ -27,7 +27,7 @@ public class RemoteDestinationFallbackFactory implements FallbackFactory<RemoteD
 
         return new RemoteDestinationService() {
             @Override
-            public R<List<Destination>> list(String source) {
+            public R<List<Destination>> list(Integer type, String name, Integer size, String source) {
                 return R.fail(Lists.newArrayList(), "查询目的地列表信息失败:" + throwable.getMessage());
             }
 

@@ -6,14 +6,16 @@ import cn.wolfcode.wolf2w.business.api.domain.StrategyES;
 import cn.wolfcode.wolf2w.business.respository.StrategyEsRepository;
 import cn.wolfcode.wolf2w.business.service.IStrategyEsService;
 import cn.wolfcode.wolf2w.common.core.constant.SecurityConstants;
+import cn.wolfcode.wolf2w.common.core.domain.R;
 import cn.wolfcode.wolf2w.common.core.utils.bean.BeanUtils;
 import lombok.RequiredArgsConstructor;
-
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class StrategyEsServiceImpl implements IStrategyEsService {
@@ -21,14 +23,19 @@ public class StrategyEsServiceImpl implements IStrategyEsService {
     private final RemoteStrategyService remoteStrategyService;
 
     @Override
-    public void initData() {
-        List<Strategy> list = remoteStrategyService.list2(SecurityConstants.INNER).getData();
+    public boolean initData() {
+        R<List<Strategy>> result = remoteStrategyService.list2(SecurityConstants.INNER);
+        if (R.isError(result) || result.getData() == null) {
+            log.warn("获取攻略数据失败:{}", result.getMsg());
+            return false;
+        }
         List<StrategyES> esList = new ArrayList<>();
-        for (Strategy strategy : list) {
+        for (Strategy strategy : result.getData()) {
             StrategyES es = new StrategyES();
             BeanUtils.copyProperties(strategy, es);
             esList.add(es);
         }
         repository.saveAll(esList);
+        return true;
     }
 }

@@ -20,10 +20,13 @@ public class SearchAdminController {
 
     @GetMapping("/dataInit")
     public R<?> dataInit() {
-        strategyEsService.initData();
-        noteEsService.initData();
-        destinationEsService.initData();
-        userInfoEsService.initData();
-        return R.ok("攻略ES数据初始化完成");
+        boolean strategy = strategyEsService.initData();
+        boolean note = noteEsService.initData();
+        boolean destination = destinationEsService.initData();
+        boolean user = userInfoEsService.initData();
+        if (strategy && note && destination && user) {
+            return R.ok("ES数据初始化完成");
+        }
+        return R.fail("ES数据初始化失败，请检查日志");
     }
 }

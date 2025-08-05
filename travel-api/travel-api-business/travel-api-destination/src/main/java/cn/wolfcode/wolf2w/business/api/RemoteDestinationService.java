@@ -8,6 +8,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 import cn.wolfcode.wolf2w.business.api.domain.Destination;
 
 import java.util.List;
@@ -24,7 +25,11 @@ import java.util.List;
 public interface RemoteDestinationService {
 
     @GetMapping("/destinations/feign/list")
-    R<List<Destination>> list(@RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+    R<List<Destination>> list(
+            @RequestParam("type") Integer type,
+            @RequestParam(value = "name", required = false) String name,
+            @RequestParam(value = "size", required = false, defaultValue = "30") Integer size,
+            @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 
     @GetMapping("/destinations/feign/{id}")
     R<Destination> getOne(@PathVariable("id") Long id, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
