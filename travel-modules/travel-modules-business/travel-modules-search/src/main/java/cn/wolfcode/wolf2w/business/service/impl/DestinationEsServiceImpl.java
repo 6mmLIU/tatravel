@@ -23,13 +23,10 @@ public class DestinationEsServiceImpl implements IDestinationEsService {
 
     @Override
     public void initData() {
-        R<List<Destination>> result = remoteDestinationService.list2(SecurityConstants.INNER);
-        if (R.isError(result) || result.getData() == null) {
-            log.warn("获取目的地数据失败:{}", result.getMsg());
-            return;
-        }
+        R<List<Destination>> list = remoteDestinationService.list2(SecurityConstants.INNER);
+        log.info(list.getMsg()+"异常");
         List<DestinationES> esList = new ArrayList<>();
-        for (Destination destination : result.getData()) {
+        for (Destination destination : list.getData()) {
             DestinationES es = new DestinationES();
             BeanUtils.copyProperties(destination, es);
             esList.add(es);
