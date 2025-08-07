@@ -2,6 +2,7 @@ package cn.wolfcode.wolf2w.member.api.domain;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import cn.wolfcode.wolf2w.common.core.annotation.Excel;
@@ -19,12 +20,10 @@ import java.io.Serializable;
  * @author dafei
  * @date 2023-06-18
  */
-
+@Data
 @TableName("ta_user_info")
 public class UserInfo implements Serializable {
     private static final long serialVersionUID = 1L;
-
-
 
     public static final int STATE_NORMAL = 0;  //正常
     public static final int STATE_FREEZE = 1;  //冻结
@@ -85,4 +84,6 @@ public class UserInfo implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Excel(name = "生日", width = 30, dateFormat = "yyyy-MM-dd")
     private Date birthday;
+
+
 }

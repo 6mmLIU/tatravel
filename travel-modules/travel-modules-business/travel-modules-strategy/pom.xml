@@ -87,5 +87,15 @@
             <artifactId>travel-common-mybatis-plus</artifactId>
             <version>3.6.2</version>
         </dependency>
+        <dependency>
+            <groupId>cn.wolfcode.wolf2w</groupId>
+            <artifactId>travel-common-rabbit</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.wolfcode.wolf2w</groupId>
+            <artifactId>travel-api-search</artifactId>
+            <version>3.6.2</version>
+        </dependency>
     </dependencies>
 </project>

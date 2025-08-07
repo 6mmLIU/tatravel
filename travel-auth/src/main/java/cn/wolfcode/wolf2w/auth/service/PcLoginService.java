@@ -13,7 +13,6 @@ import cn.wolfcode.wolf2w.common.redis.util.RedisKeys;
 import cn.wolfcode.wolf2w.common.security.utils.SecurityUtils;
 import cn.wolfcode.wolf2w.member.api.RemoteUserInfoService;
 import cn.wolfcode.wolf2w.member.api.domain.UserInfo;
-import cn.wolfcode.wolf2w.system.api.RemoteUserService;
 import cn.wolfcode.wolf2w.system.api.model.LoginUser;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

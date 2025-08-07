@@ -15,14 +15,17 @@ import cn.wolfcode.wolf2w.business.vo.CatalogVO;
 import cn.wolfcode.wolf2w.business.vo.ThemeVO;
 import cn.wolfcode.wolf2w.common.core.constant.SecurityConstants;
 import cn.wolfcode.wolf2w.common.core.domain.R;
+import cn.wolfcode.wolf2w.common.rabbit.config.TravelRabbitConfig;
 import cn.wolfcode.wolf2w.common.redis.service.RedisService;
 import cn.wolfcode.wolf2w.common.redis.util.RedisKeys;
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -58,6 +61,10 @@ public class StrategyServiceImpl extends ServiceImpl<StrategyMapper, cn.wolfcode
     private IStrategyConditionService strategyConditionService;
     @Autowired
     private RedisService redisService;
+    @Autowired
+    private AmqpTemplate amqpTemplate;
+    @Autowired
+    private TravelRabbitConfig travelRabbitConfig;
 
     @Override
     public IPage<cn.wolfcode.wolf2w.business.api.domain.Strategy> queryPage(StrategyQuery qo) {
@@ -128,8 +135,14 @@ public class StrategyServiceImpl extends ServiceImpl<StrategyMapper, cn.wolfcode
         StrategyContent content = new StrategyContent();
         content.setId(id);
         content.setContent(strategyContent);
-        return contentMapper.insert(content);
+        String message = JSON.toJSONString(strategy);
+        amqpTemplate.convertAndSend(TravelRabbitConfig.STRATEGY_EXCHANGE_NAME, TravelRabbitConfig.STRATEGY_ROUTING_KEY, message);
+        int insert=contentMapper.insert(content);
+        return insert;
+
+        //发送消息到队列,消息内容就是攻略对象
     }
+
 
     @Override
     public void statisRank() {

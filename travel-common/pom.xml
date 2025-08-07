@@ -18,6 +18,7 @@
         <module>travel-common-datascope</module>
         <module>travel-common-datasource</module>
         <module>travel-common-mybatis-plus</module>
+        <module>travel-common-rabbit</module>
     </modules>
 
     <artifactId>travel-common</artifactId>
