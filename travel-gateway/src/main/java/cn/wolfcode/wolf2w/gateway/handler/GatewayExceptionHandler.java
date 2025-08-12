@@ -1,5 +1,6 @@
 package cn.wolfcode.wolf2w.gateway.handler;
 
+import cn.wolfcode.wolf2w.common.core.exception.ServiceException;
 import org.springframework.cloud.gateway.support.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,11 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler
         {
             ResponseStatusException responseStatusException = (ResponseStatusException) ex;
             msg = responseStatusException.getMessage();
+        }
+        else if (ex instanceof ServiceException)
+        {
+            ServiceException serviceException = (ServiceException) ex;
+            msg = serviceException.getMessage();
         }
         else
         {

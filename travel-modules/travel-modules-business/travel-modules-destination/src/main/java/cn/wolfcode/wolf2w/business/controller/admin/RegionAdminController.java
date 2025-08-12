@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletResponse;
+
+import io.swagger.annotations.ApiImplicitParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import cn.wolfcode.wolf2w.common.core.domain.R;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -23,16 +25,18 @@ import cn.wolfcode.wolf2w.business.api.domain.Region;
 import cn.wolfcode.wolf2w.business.service.IRegionService;
 import cn.wolfcode.wolf2w.common.core.web.controller.BaseController;
 import cn.wolfcode.wolf2w.common.core.utils.poi.ExcelUtil;
+import springfox.documentation.annotations.ApiIgnore;
 
 
 /**
  * 区域Controller
- * 
+ *
  * @author liuhaoming
  * @date 2025-07-22
  */
 @RestController
 @RequestMapping("/admin/regions")
+@ApiIgnore
 public class RegionAdminController extends BaseController
 {
     @Autowired

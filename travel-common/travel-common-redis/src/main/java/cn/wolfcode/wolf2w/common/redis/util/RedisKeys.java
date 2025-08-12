@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 public enum RedisKeys {
+    BRUSH("brush",1*60),
     STRATEGY_USER_THUMBSUP("strategy_user_thumbsup",-1l),
     STRATEGY_USER_FAVOR("strategy_user_favor", -1l),
     STRATEGY_STATUS_HASH("strategy_statis_hash", -1l),

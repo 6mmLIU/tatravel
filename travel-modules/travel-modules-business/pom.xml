@@ -19,6 +19,7 @@
         <module>travel-modules-note</module>
         <module>travel-modules-answer</module>
         <module>travel-modules-search</module>
+        <module>travel-modules-canal</module>
     </modules>
 
     <properties>

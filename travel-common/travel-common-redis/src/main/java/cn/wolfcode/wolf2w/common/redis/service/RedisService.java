@@ -35,6 +35,12 @@ public class RedisService {
         redisTemplate.opsForValue().set(key, value);
     }
 
+
+    public <T> void setNxCacheObject(final String key, final T value,long timeout, TimeUnit unit) {
+        //setIfabsent相当于setnx,如果不存在创建,如果存在什么都不做
+        redisTemplate.opsForValue().setIfAbsent(key, value, timeout, unit);
+    }
+
     /**
      * 缓存基本的对象，Integer、String、实体类等
      *

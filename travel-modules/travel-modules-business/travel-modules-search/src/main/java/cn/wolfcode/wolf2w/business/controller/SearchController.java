@@ -78,4 +78,7 @@ public class SearchController {
         Page<Strategy> page = searchService.searchHighLight(Strategy.class, StrategyES.class, qo, "title", "subTitle", "summary");
         return page;
     }
+
+    //返回问答页面高亮页面
+
 }

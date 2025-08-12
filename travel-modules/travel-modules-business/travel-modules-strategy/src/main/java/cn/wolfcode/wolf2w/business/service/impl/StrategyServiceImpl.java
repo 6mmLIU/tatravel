@@ -135,8 +135,7 @@ public class StrategyServiceImpl extends ServiceImpl<StrategyMapper, cn.wolfcode
         StrategyContent content = new StrategyContent();
         content.setId(id);
         content.setContent(strategyContent);
-        String message = JSON.toJSONString(strategy);
-        amqpTemplate.convertAndSend(TravelRabbitConfig.STRATEGY_EXCHANGE_NAME, TravelRabbitConfig.STRATEGY_ROUTING_KEY, message);
+//
         int insert=contentMapper.insert(content);
         return insert;
 
@@ -322,16 +321,18 @@ public class StrategyServiceImpl extends ServiceImpl<StrategyMapper, cn.wolfcode
             Strategy strategy = baseMapper.selectById(sid);
             Map map = new HashMap();
             map.put("id", strategy.getId());
-            map.put("viewnum", Integer.valueOf(strategy.getViewnum().toString()));
-            map.put("replynum", Integer.valueOf(strategy.getReplynum().toString()));
-            map.put("favornum", Integer.valueOf(strategy.getFavornum().toString()));
-            map.put("sharenum", Integer.valueOf(strategy.getSharenum().toString()));
-            map.put("thumbsupnum", Integer.valueOf(strategy.getThumbsupnum().toString()));
+            map.put("viewnum",  safeInt(strategy.getViewnum()));
+            map.put("replynum", safeInt(strategy.getReplynum()));
+            map.put("favornum", safeInt(strategy.getFavornum()));
+            map.put("sharenum", safeInt(strategy.getSharenum()));
+            map.put("thumbsupnum", safeInt(strategy.getThumbsupnum()));
             redisService.setCacheMap(key, map);
         }
         return key;
     }
-
+    private static int safeInt(Long value) {
+        return value == null ? 0 : value.intValue();
+    }
     private static void addToConditionList(List<Map<String, Object>> list,
                                            Date now,
                                            List<StrategyCondition> conditionList,

@@ -9,7 +9,7 @@
         <version>3.6.2</version>
     </parent>
 
-    <artifactId>travel-modules-destination</artifactId>
+    <artifactId>travel-modules-canal</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -55,10 +55,6 @@
             <artifactId>travel-common-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
@@ -74,18 +70,19 @@
         </dependency>
         <dependency>
             <groupId>cn.wolfcode.wolf2w</groupId>
-            <artifactId>travel-api-destination</artifactId>
-            <version>3.6.2</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
-            <artifactId>travel-common-swagger</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
             <artifactId>travel-modules-strategy</artifactId>
             <version>3.6.2</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>top.javatool</groupId>
+            <artifactId>canal-spring-boot-starter</artifactId>
+            <version>1.2.1-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.wolfcode.wolf2w</groupId>
+            <artifactId>travel-common-rabbit</artifactId>
+            <version>3.6.2</version>
         </dependency>
     </dependencies>
 </project>

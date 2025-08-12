@@ -1,0 +1,32 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: travel-canal
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  redis:
+    port: 6379
+  rabbitmq:
+    addresses: 192.168.171.134:5672
+    username: root
+    password: root
+    virtual-host: /
+server:
+  port: 9095
+canal:
+  server: 192.168.171.133:11111
+  destination: example
+  user-name: canal
+  password: 123456
+logging:
+  level:
+    root: info
+    top:
+      javatool:
+        canal:
+          client:
+            client:
+              AbstractCanalClient: error
