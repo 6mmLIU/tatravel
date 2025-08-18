@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>travel-api</artifactId>
-        <groupId>cn.wolfcode.wolf2w</groupId>
+        <groupId>cn.sixmm.sixsixsix</groupId>
         <version>3.6.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -17,7 +17,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-core</artifactId>
         </dependency>
 

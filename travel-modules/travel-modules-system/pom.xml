@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>cn.wolfcode.wolf2w</groupId>
+        <groupId>cn.sixmm.sixsixsix</groupId>
         <artifactId>travel-modules</artifactId>
         <version>3.6.2</version>
     </parent>
@@ -59,17 +59,17 @@
 
         <!-- RuoYi Common DataSource -->
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-datasource</artifactId>
         </dependency>
 
         <!-- RuoYi Common DataScope -->
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-datascope</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-datasource</artifactId>
         </dependency>
         <dependency>
@@ -78,13 +78,13 @@
         </dependency>
         <!-- RuoYi Common Log -->
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-log</artifactId>
         </dependency>
 
         <!-- RuoYi Common Swagger -->
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-swagger</artifactId>
         </dependency>
         <dependency>

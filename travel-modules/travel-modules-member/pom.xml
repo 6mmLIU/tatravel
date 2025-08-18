@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>travel-modules</artifactId>
-        <groupId>cn.wolfcode.wolf2w</groupId>
+        <groupId>cn.sixmm.sixsixsix</groupId>
         <version>3.6.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -54,7 +54,7 @@
         </dependency>
 
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-datasource</artifactId>
             <exclusions>
                 <exclusion>
@@ -65,11 +65,11 @@
         </dependency>
 
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-log</artifactId>
         </dependency>
         <!-- mybatis-plus 增强CRUD -->
@@ -78,7 +78,7 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-api-member</artifactId>
         </dependency>
 

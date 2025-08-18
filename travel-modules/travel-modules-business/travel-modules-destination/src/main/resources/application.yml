@@ -32,6 +32,6 @@ server:
 
 swagger:
   enabled: true
-  basePackage: cn.wolfcode.wolf2w.business.controller
+  basePackage: cn.sixmm.sixsixsix.business.controller
   title: 目的地模块
   description: 热门区域和热门目的地的管理模块

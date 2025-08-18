@@ -1,5 +1,5 @@
-cn.wolfcode.wolf2w.common.security.config.WebMvcConfig
-cn.wolfcode.wolf2w.common.security.service.TokenService
-cn.wolfcode.wolf2w.common.security.aspect.PreAuthorizeAspect
-cn.wolfcode.wolf2w.common.security.aspect.InnerAuthAspect
-cn.wolfcode.wolf2w.common.security.handler.GlobalExceptionHandler
+cn.sixmm.sixsixsix.common.security.config.WebMvcConfig
+cn.sixmm.sixsixsix.common.security.service.TokenService
+cn.sixmm.sixsixsix.common.security.aspect.PreAuthorizeAspect
+cn.sixmm.sixsixsix.common.security.aspect.InnerAuthAspect
+cn.sixmm.sixsixsix.common.security.handler.GlobalExceptionHandler

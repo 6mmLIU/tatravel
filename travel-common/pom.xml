@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>cn.wolfcode.wolf2w</groupId>
+        <groupId>cn.sixmm.sixsixsix</groupId>
         <artifactId>travel</artifactId>
         <version>3.6.2</version>
     </parent>

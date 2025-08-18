@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>cn.wolfcode.wolf2w</groupId>
+        <groupId>cn.sixmm.sixsixsix</groupId>
         <artifactId>travel-modules-business</artifactId>
         <version>3.6.2</version>
     </parent>
@@ -42,11 +42,11 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-log</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-core</artifactId>
         </dependency>
     </dependencies>
