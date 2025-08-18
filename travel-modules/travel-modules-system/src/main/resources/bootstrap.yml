@@ -25,4 +25,4 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-  type-aliases-package: cn.wolfcode.wolf2w.**.domain
+  type-aliases-package: cn.sixmm.sixsixsix.**.domain

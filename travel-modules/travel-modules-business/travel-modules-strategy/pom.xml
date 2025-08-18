@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>cn.wolfcode.wolf2w</groupId>
+        <groupId>cn.sixmm.sixsixsix</groupId>
         <artifactId>travel-modules-business</artifactId>
         <version>3.6.2</version>
     </parent>
@@ -22,7 +22,7 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-api-strategy</artifactId>
             <version>3.6.2</version>
         </dependency>
@@ -43,11 +43,11 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-log</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-security</artifactId>
         </dependency>
         <dependency>
@@ -56,7 +56,7 @@
         </dependency>
 
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-redis</artifactId>
         </dependency>
         <dependency>
@@ -68,7 +68,7 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-datasource</artifactId>
             <exclusions>
                 <exclusion>
@@ -78,22 +78,22 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-api-destination</artifactId>
             <version>3.6.2</version>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-mybatis-plus</artifactId>
             <version>3.6.2</version>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-common-rabbit</artifactId>
             <version>3.6.2</version>
         </dependency>
         <dependency>
-            <groupId>cn.wolfcode.wolf2w</groupId>
+            <groupId>cn.sixmm.sixsixsix</groupId>
             <artifactId>travel-api-search</artifactId>
             <version>3.6.2</version>
         </dependency>
